@@ -18,6 +18,7 @@
   h2 {
     font-size: 3.2rem;
     padding-bottom: 10px;
+    text-align: center;
   }
   
   h4 {
@@ -35,14 +36,41 @@
     max-width: 100%;
     height: auto;
   }  
-  header {
+
+// Variables
+.sectionsizer{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15%;
+  }
+//   Mixinsssssssss
+// MIXINS
+@mobile: ~"(max-width: 533px)";
+
+  header{
     display:flex;
     max-width: 100%;
     height: 80px;
     padding: 5px;
     justify-content: space-between;
-  }
 
+    @media @mobile{
+        display:flex;
+        flex-direction:column;
+        height:230px;
+        max-width: 100%;
+        padding:5px;
+        padding-left: 62px;
+    }
+  }
+  
+    h1{
+        @media @mobile{
+            padding-left: 85px;
+        }
+    }
   .menu{
     margin: 0 30 0 0;
 
@@ -51,6 +79,8 @@
         color: grey;
         margin: 0 10px;
         line-height: 70px;
+
+        
     }
 
     label{
@@ -70,7 +100,9 @@
     display:flex;
     max-width: 100%;
       
-    
+    @media @mobile{
+        .sectionsizer();
+    }
     .food{
           max-width: 45%;
       }
@@ -78,6 +110,19 @@
       .heading{
           max-width: 45%;
           padding: 25px;
+          text-align: center;
+
+          @media @mobile{
+              max-width: 75%;
+          }
+      }
+  }
+
+  img.replateLogo{
+      max-width: 15%;
+      @media @mobile{
+          max-width: 15%;
+          padding-left:134px;
       }
   }
 
@@ -87,6 +132,10 @@
     width: 360px;
     padding: 8% 0 0;
     margin: auto;
+
+    @media @mobile{
+        padding:0;
+    }
   }
   .form {
     position: relative;
@@ -176,4 +225,4 @@
 
 .footer{
     text-align: center;
-}
+    }
